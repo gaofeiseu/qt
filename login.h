@@ -13,6 +13,7 @@
 #include <checkcodeimage.h>
 #include <QDateTime>
 #include <QDebug>
+#include "log4qt/logger.h"
 
 namespace Ui {
 class Login;
@@ -21,6 +22,7 @@ class Login;
 class Login : public QDialog
 {
     Q_OBJECT
+    LOG4QT_DECLARE_QCLASS_LOGGER
 
 public:
     explicit Login(QWidget *parent = 0);

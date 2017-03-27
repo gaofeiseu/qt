@@ -41,8 +41,7 @@ void Login::switchLoginTypeStackedWidget(){
             //二维码登录界面，初始化二维码内容
             QString qrcodeStr = "http://www.baidu.com/" + QString::number(QDateTime::currentMSecsSinceEpoch() , 10);
             ui->qrcode_widget->generateString(qrcodeStr);
-            qDebug()<<qrcodeStr;
-
+            logger()->debug("生成二维码的字符串为:"+qrcodeStr);
         }
 
         ui->login_style_stackedWidget->setCurrentIndex(index);
