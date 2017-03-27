@@ -44,10 +44,10 @@ public:
     QLabel *label_2;
     QLineEdit *lineEdit;
     QLabel *label_5;
-    QComboBox *comboBox_3;
-    QLineEdit *lineEdit_3;
+    QComboBox *account_comboBox;
+    QLineEdit *checkCode_lineEdit;
     QLabel *label_6;
-    QCommandLinkButton *commandLinkButton;
+    QCommandLinkButton *account_login_commandLinkButton;
     QCheckBox *checkBox;
     QCheckBox *checkBox_2;
     QCheckBox *checkBox_3;
@@ -61,7 +61,7 @@ public:
     QLabel *label_11;
     QLineEdit *lineEdit_6;
     QPushButton *pushButton;
-    QCommandLinkButton *commandLinkButton_2;
+    QCommandLinkButton *phone_login_commandLinkButton;
     QWidget *scan_login_page;
     QLabel *label_13;
     QrcodeGenerate *qrcode_widget;
@@ -115,19 +115,19 @@ public:
         label_5 = new QLabel(account_login_page);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(80, 100, 61, 16));
-        comboBox_3 = new QComboBox(account_login_page);
-        comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
-        comboBox_3->setGeometry(QRect(150, 100, 301, 22));
-        comboBox_3->setEditable(true);
-        lineEdit_3 = new QLineEdit(account_login_page);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(150, 200, 191, 20));
+        account_comboBox = new QComboBox(account_login_page);
+        account_comboBox->setObjectName(QStringLiteral("account_comboBox"));
+        account_comboBox->setGeometry(QRect(150, 100, 301, 22));
+        account_comboBox->setEditable(true);
+        checkCode_lineEdit = new QLineEdit(account_login_page);
+        checkCode_lineEdit->setObjectName(QStringLiteral("checkCode_lineEdit"));
+        checkCode_lineEdit->setGeometry(QRect(150, 200, 191, 20));
         label_6 = new QLabel(account_login_page);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(67, 200, 71, 16));
-        commandLinkButton = new QCommandLinkButton(account_login_page);
-        commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(250, 290, 91, 41));
+        account_login_commandLinkButton = new QCommandLinkButton(account_login_page);
+        account_login_commandLinkButton->setObjectName(QStringLiteral("account_login_commandLinkButton"));
+        account_login_commandLinkButton->setGeometry(QRect(250, 290, 91, 41));
         checkBox = new QCheckBox(account_login_page);
         checkBox->setObjectName(QStringLiteral("checkBox"));
         checkBox->setGeometry(QRect(300, 250, 71, 16));
@@ -171,9 +171,9 @@ public:
         pushButton = new QPushButton(phone_login_page);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(360, 175, 101, 23));
-        commandLinkButton_2 = new QCommandLinkButton(phone_login_page);
-        commandLinkButton_2->setObjectName(QStringLiteral("commandLinkButton_2"));
-        commandLinkButton_2->setGeometry(QRect(250, 250, 91, 41));
+        phone_login_commandLinkButton = new QCommandLinkButton(phone_login_page);
+        phone_login_commandLinkButton->setObjectName(QStringLiteral("phone_login_commandLinkButton"));
+        phone_login_commandLinkButton->setGeometry(QRect(250, 250, 91, 41));
         login_style_stackedWidget->addWidget(phone_login_page);
         scan_login_page = new QWidget();
         scan_login_page->setObjectName(QStringLiteral("scan_login_page"));
@@ -205,11 +205,11 @@ public:
         QWidget::setTabOrder(radioButton, radioButton_2);
         QWidget::setTabOrder(radioButton_2, radioButton_3);
         QWidget::setTabOrder(radioButton_3, comboBox);
-        QWidget::setTabOrder(comboBox, comboBox_3);
-        QWidget::setTabOrder(comboBox_3, lineEdit);
-        QWidget::setTabOrder(lineEdit, lineEdit_3);
-        QWidget::setTabOrder(lineEdit_3, commandLinkButton);
-        QWidget::setTabOrder(commandLinkButton, checkBox_3);
+        QWidget::setTabOrder(comboBox, account_comboBox);
+        QWidget::setTabOrder(account_comboBox, lineEdit);
+        QWidget::setTabOrder(lineEdit, checkCode_lineEdit);
+        QWidget::setTabOrder(checkCode_lineEdit, account_login_commandLinkButton);
+        QWidget::setTabOrder(account_login_commandLinkButton, checkBox_3);
         QWidget::setTabOrder(checkBox_3, checkBox);
         QWidget::setTabOrder(checkBox, checkBox_2);
 
@@ -231,7 +231,7 @@ public:
         label_2->setText(QApplication::translate("Login", "\347\231\273\345\275\225\345\257\206\347\240\201\357\274\232", Q_NULLPTR));
         label_5->setText(QApplication::translate("Login", "\347\231\273\345\275\225\350\264\246\345\217\267\357\274\232", Q_NULLPTR));
         label_6->setText(QApplication::translate("Login", "\345\233\276\345\275\242\351\252\214\350\257\201\347\240\201\357\274\232", Q_NULLPTR));
-        commandLinkButton->setText(QApplication::translate("Login", "\347\231\273\345\275\225", Q_NULLPTR));
+        account_login_commandLinkButton->setText(QApplication::translate("Login", "\347\231\273\345\275\225", Q_NULLPTR));
         checkBox->setText(QApplication::translate("Login", "\350\256\260\344\275\217\350\264\246\345\217\267", Q_NULLPTR));
         checkBox_2->setText(QApplication::translate("Login", "\350\256\260\344\275\217\345\257\206\347\240\201", Q_NULLPTR));
         checkBox_3->setText(QApplication::translate("Login", "\346\230\276\347\244\272\345\257\206\347\240\201", Q_NULLPTR));
@@ -240,7 +240,7 @@ public:
         label_10->setText(QApplication::translate("Login", "\345\233\276\345\275\242\351\252\214\350\257\201\347\240\201", Q_NULLPTR));
         label_11->setText(QApplication::translate("Login", "\347\237\255\344\277\241\351\252\214\350\257\201\347\240\201\357\274\232", Q_NULLPTR));
         pushButton->setText(QApplication::translate("Login", "\350\216\267\345\217\226\347\237\255\344\277\241\351\252\214\350\257\201\347\240\201", Q_NULLPTR));
-        commandLinkButton_2->setText(QApplication::translate("Login", "\347\231\273\345\275\225", Q_NULLPTR));
+        phone_login_commandLinkButton->setText(QApplication::translate("Login", "\347\231\273\345\275\225", Q_NULLPTR));
         label_13->setText(QApplication::translate("Login", "\346\217\220\347\244\272\346\226\207\345\255\227\357\274\232\345\275\223\345\211\215\351\252\214\350\257\201\347\240\201\345\260\206\345\234\25060\347\247\222\345\220\216\350\277\207\346\234\237", Q_NULLPTR));
     } // retranslateUi
 

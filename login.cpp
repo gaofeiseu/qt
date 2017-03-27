@@ -7,6 +7,8 @@ Login::Login(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    logger()->debug("开启应用");
+
     setWindowFlags(Qt::WindowCloseButtonHint);//隐藏帮助按钮
 
     initLoginTypeRadioBtns();
@@ -15,6 +17,7 @@ Login::Login(QWidget *parent) :
     ui->lineEdit->setEchoMode(QLineEdit::Password);//将密码输入lineEdit变为密码输入样式
     ui->lineEdit->setClearButtonEnabled(true);//当lineEdit有输入内容时，显示清除按钮
     connect(ui->checkBox_3,SIGNAL(clicked(bool)),this,SLOT(switchPasswordInputStyle()));
+    connect(ui->account_login_commandLinkButton,SIGNAL(clicked(bool)),this,SLOT(clickAccountLoginBtn()));
 
     initCheckCodeImage();
 
@@ -41,8 +44,7 @@ void Login::switchLoginTypeStackedWidget(){
             //二维码登录界面，初始化二维码内容
             QString qrcodeStr = "http://www.baidu.com/" + QString::number(QDateTime::currentMSecsSinceEpoch() , 10);
             ui->qrcode_widget->generateString(qrcodeStr);
-            logger()->debug("生成二维码的字符串为:"+qrcodeStr);
-            logger()->info("123456");
+            logger()->debug("二维码的字符串内容为:"+qrcodeStr);
         }
 
         ui->login_style_stackedWidget->setCurrentIndex(index);
@@ -86,6 +88,15 @@ void Login::initCheckCodeImage(){
     ui->frame->setLayout(hboxLayout);
 }
 
+/**
+ * @brief Login::clickAccountLoginBtn
+ * 点击登录按钮触发的SLOT
+ */
+void Login::clickAccountLoginBtn(){
+    logger()->debug("进行账号登录操作");
+}
+
+
 
 
 void Login::paintEvent(QPaintEvent *event){
@@ -99,5 +110,6 @@ void Login::paintEvent(QPaintEvent *event){
 
 Login::~Login()
 {
+    logger()->debug("关闭应用");
     delete ui;
 }

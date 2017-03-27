@@ -11,6 +11,8 @@
 #include <QPen>
 #include <QString>
 #include <QMouseEvent>
+#include <QDateTime>
+#include "log4qt/logger.h"
 
 namespace Ui {
 class CheckCodeImage;
@@ -19,6 +21,7 @@ class CheckCodeImage;
 class CheckCodeImage : public QWidget
 {
     Q_OBJECT
+    LOG4QT_DECLARE_QCLASS_LOGGER
 
 public:
     explicit CheckCodeImage(QWidget *parent = 0);

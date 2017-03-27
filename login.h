@@ -37,14 +37,14 @@ protected:
 private:
     Ui::Login *ui;
 
-
-
     QList<QRadioButton*> loginTypeRadioBtns;
+
     int loginTypeTabIndex = -1;
 
 
 
     void initLoginTypeRadioBtns();
+
     void initConnectForLoginTypeRadioButton();
 
     void initCheckCodeImage();
@@ -58,6 +58,8 @@ private slots:
     void switchLoginTypeStackedWidget();
 
     void switchPasswordInputStyle();
+
+    void clickAccountLoginBtn();
 
 };
 

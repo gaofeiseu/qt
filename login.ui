@@ -157,7 +157,7 @@
         <string>登录账号：</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_3">
+      <widget class="QComboBox" name="account_comboBox">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -170,7 +170,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="checkCode_lineEdit">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -193,7 +193,7 @@
         <string>图形验证码：</string>
        </property>
       </widget>
-      <widget class="QCommandLinkButton" name="commandLinkButton">
+      <widget class="QCommandLinkButton" name="account_login_commandLinkButton">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -370,7 +370,7 @@
         <string>获取短信验证码</string>
        </property>
       </widget>
-      <widget class="QCommandLinkButton" name="commandLinkButton_2">
+      <widget class="QCommandLinkButton" name="phone_login_commandLinkButton">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -450,10 +450,10 @@
   <tabstop>radioButton_2</tabstop>
   <tabstop>radioButton_3</tabstop>
   <tabstop>comboBox</tabstop>
-  <tabstop>comboBox_3</tabstop>
+  <tabstop>account_comboBox</tabstop>
   <tabstop>lineEdit</tabstop>
-  <tabstop>lineEdit_3</tabstop>
-  <tabstop>commandLinkButton</tabstop>
+  <tabstop>checkCode_lineEdit</tabstop>
+  <tabstop>account_login_commandLinkButton</tabstop>
   <tabstop>checkBox_3</tabstop>
   <tabstop>checkBox</tabstop>
   <tabstop>checkBox_2</tabstop>

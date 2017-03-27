@@ -30,11 +30,13 @@ void CheckCodeImage::setCheckCodeSize(int size){
 
 void CheckCodeImage::generateCheckCode(){
     QString ret = "";
+    qsrand(QDateTime::currentMSecsSinceEpoch());
     for(int i=0; i<checkCodeSize; i++)
     {
         ret += codes.at(qrand() % codes.size());
     }
     checkCode = ret;
+    logger()->debug("图形验证码:"+ret);
 }
 
 void CheckCodeImage::mousePressEvent(QMouseEvent *event){
